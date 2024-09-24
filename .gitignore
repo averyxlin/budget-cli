@@ -1,1 +1,4 @@
 /env
+/budget_cli.egg-info
+/build
+/dist
