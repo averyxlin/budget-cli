@@ -5,8 +5,26 @@ a simple python and supabase cli. i kind of have a spending problem, but i can't
 
 ### usage
 available commands:
-1. default `--version` and `--help`
+1. `--version`: shows the current version of the budget cli
+2. `--help`: displays help information about the cli
+3. `--income <category> <amount>`: logs income, taking a category (like ‘salary’) and an amount as input. if the category already exists, it updates the amount; otherwise, it creates a new entry
 
-## technologies
-- the cli itself is built with python
-- supabase is used for data storage
+### technologies + database overview
+the cli uses supabase to store and manage budget-related data. the database structure is designed to track income and monthly expenses with clear categorizations.
+
+1. **tables:**
+   - **income table**: stores entries for different sources of income (e.g., salary, other).
+      - fields: `id`, `category`, `amount`, `date`.
+
+   - **monthly expenses table**: tracks expenses on a monthly basis.
+      - fields: `id`, `month`, `needs_total`, `wants_total`, `savings_total`.
+
+   - **expense categories table**: categorizes expenses into needs, wants, and savings, and links them to a specific month.
+      - fields: `id`, `expense_type`, `monthly_expense_id`, `planned_amount`.
+
+   - **items table**: stores specific items under needs, wants, and savings.
+      - fields: `id`, `title`, `amount`, `expense_category_id`.
+
+2. **technologies**:
+   - the cli itself is built with python
+   - supabase is used for data storage
