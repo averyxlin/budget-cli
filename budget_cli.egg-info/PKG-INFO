@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: budget-cli
+Version: 1.0.0
+Requires-Dist: supabase
+Requires-Dist: python-dotenv
+Requires-Dist: certifi

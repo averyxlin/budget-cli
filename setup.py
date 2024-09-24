@@ -1,5 +1,3 @@
-# setup.py
-
 from setuptools import setup, find_packages
 
 setup(
@@ -9,6 +7,7 @@ setup(
     install_requires=[           
         'supabase',
         'python-dotenv',
+        'certifi',  
     ],
     entry_points={
         'console_scripts': [
