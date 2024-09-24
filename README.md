@@ -10,12 +10,3 @@ available commands:
 ## technologies
 - the cli itself is built with python
 - supabase is used for data storage
-
-### database overview
-the database is designed to track budgeting information, consisting of five main tables:
-
-- **incomes**: stores the base amount made every month
-- **budgets**: stores the total amount remaining to be allocated
-- **categories**: stores high-level categories (e.g., "needs", "wants", "savings")
-- **subcategories**: stores subcategories under each category (e.g., "groceries", "entertainment")
-- **allocations**: stores the amount allocated to each category and subcategory
