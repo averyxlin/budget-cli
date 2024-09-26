@@ -1,5 +1,9 @@
 # budget/budget.py
 
+import ssl
+
+ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
+
 import argparse
 from commands.income import set_income
 
