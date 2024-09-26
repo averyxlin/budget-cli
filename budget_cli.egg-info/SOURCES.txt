@@ -10,6 +10,7 @@ budget_cli.egg-info/requires.txt
 budget_cli.egg-info/top_level.txt
 commands/__init__.py
 commands/income.py
+commands/list.py
 globals/__init__.py
 globals/total_income.py
 services/__init__.py
