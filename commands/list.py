@@ -5,7 +5,6 @@ def list_data(table):
     supabase = get_supabase_client()
     response = supabase.table(table).select('*').execute()
     
-    # Extract the data from the response
     data = response.data if response.data else []
 
     print(f"\n--- {table.upper()} ---")
@@ -20,7 +19,6 @@ def list_data(table):
                 print(f"Category: {entry['category']}")
             if 'amount' in entry:
                 print(f"Amount: {entry['amount']}")
-        # Move this outside the loop
         total_income = get_total_income()
         print(f"TOTAL INCOME: {total_income}")
     elif table == 'monthly_expenses':
