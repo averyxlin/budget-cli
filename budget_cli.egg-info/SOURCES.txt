@@ -9,6 +9,7 @@ budget_cli.egg-info/entry_points.txt
 budget_cli.egg-info/requires.txt
 budget_cli.egg-info/top_level.txt
 commands/__init__.py
+commands/categorize.py
 commands/income.py
 commands/list.py
 commands/monthly_expenses.py
