@@ -2,6 +2,8 @@ import argparse
 from commands.income import set_income
 from commands.list import list_data
 from commands.monthly_expenses import set_monthly_expenses
+from commands.categorize import categorize
+
 # version
 VERSION = "1.0.0"
 
@@ -25,6 +27,12 @@ def main():
      # add divide subparser
     divide_subparser = subparsers.add_parser('divide', help='Divide total income into needs, wants, and savings')
     divide_subparser.add_argument('percentages', type=int, nargs='*', help='Percentages for needs, wants, and savings in order')
+
+    # add categorize subparser
+    categorize_subparser = subparsers.add_parser('categorize', help='Categorize expenses')
+    categorize_subparser.add_argument('category', help='Category to categorize the expense under')
+    categorize_subparser.add_argument('expense_type', choices=['needs', 'wants', 'savings'], help='Type of expense to categorize')
+    categorize_subparser.add_argument('planned_amount', type=float, help='Planned amount for the expense')
 
     # parse arguments
     args = parser.parse_args()
@@ -55,6 +63,9 @@ def main():
                         f"NEEDS: {needs}%, WANTS: {wants}%, SAVINGS: {savings}%")
 
         set_monthly_expenses(needs, wants, savings)
+
+    if args.command == 'categorize':
+        categorize(args.category, args.expense_type, args.planned_amount)
 
 if __name__ == '__main__':
     main()
