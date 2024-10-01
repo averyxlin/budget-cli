@@ -9,6 +9,7 @@ available commands and flags:
 2. `--help`: displays help information about the cli
 3. `--list`: lists data from a specified table. if no table is specified, it lists all tables.
 4. `income <category> <amount>`: logs income, taking a category (like ‘salary’) and an amount as input. if the category already exists, it updates the amount; otherwise, it creates a new entry
+5. `divide <needs> <wants> <savings>`: divides the total income into needs, wants, and savings based on the percentages provided
 
 ### technologies + database overview
 the cli uses supabase to store and manage budget-related data. the database structure is designed to track income and monthly expenses with clear categorizations.
