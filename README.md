@@ -4,7 +4,14 @@
 a simple python and supabase cli. i kind of have a spending problem, but i can't possibly be bothered to download a budgeting app or use a spreadsheet. however, i'm always using my terminal, so i thought this would be an easy way for me to log things without being overwhelmed by the ui.
 
 ### usage
-available commands and flags:
+## installation
+1. clone the repo
+2. `python3 -m venv env`
+3. `source env/bin/activate`
+4. `pip install .`
+5. call any of the following commands in the format `budget <command> <flags>`
+
+## available commands and flags
 1. `--version`: shows the current version of the budget cli
 2. `--help`: displays help information about the cli
 3. `--list`: lists data from a specified table. if no table is specified, it lists all tables.
