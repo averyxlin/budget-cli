@@ -1,7 +1,7 @@
 # commands/income.py
 
 from budget.services.client import get_supabase_client
-from globals.total_income import update_total_income
+from globals.total_income import get_total_income
 
 def set_income(category, amount):
     supabase = get_supabase_client()
@@ -23,4 +23,5 @@ def set_income(category, amount):
         supabase.table('income').insert({'category': category, 'amount': amount}).execute()
         print(f"Logged new income: {category} = {amount}.")
 
-    update_total_income()
+    total_income = get_total_income()
+    print(f"Total Income: ${total_income:.2f}")
