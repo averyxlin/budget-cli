@@ -27,10 +27,10 @@ the cli uses supabase to store and manage budget-related data. the database stru
       - fields: `id`, `category`, `amount`, `date`.
 
    - **monthly expenses table**: tracks expenses on a monthly basis.
-      - fields: `id`, `month`, `needs_total`, `wants_total`, `savings_total`.
+      - fields: `id`, `month`, `needs`, `wants`, `savings`.
 
-   - **expense categories table**: categorizes expenses into needs, wants, and savings, and links them to a specific month.
-      - fields: `id`, `expense_type`, `monthly_expense_id`, `planned_amount`.
+   - **expense categories table**: categorizes expenses into expense types (needs, wants, savings) with a planned amount for each type.
+      - fields: `id`, `expense_type`, `category`, `planned_amount`.
 
    - **items table**: stores specific items under needs, wants, and savings.
       - fields: `id`, `title`, `amount`, `expense_category_id`.
