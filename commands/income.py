@@ -17,11 +17,11 @@ def set_income(category, amount):
             supabase.table('income').delete().eq('id', existing_id).execute()
             print(f"Deleted {category}.")
         else:
-            print(f"Updated {category} to {amount}.")
+            print(f"Updated {category} to ${amount:.2f}.")
     else:
         # insert new entry
         supabase.table('income').insert({'category': category, 'amount': amount}).execute()
-        print(f"Logged new income: {category} = {amount}.")
+        print(f"Logged new income: {category} = ${amount}.")
 
     total_income = get_total_income()
     print(f"Total Income: ${total_income:.2f}")
