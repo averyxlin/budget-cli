@@ -21,8 +21,7 @@ a simple python and supabase cli. i kind of have a spending problem, but i can't
 7. `track <item> <amount>`: tracks an expense by itemizing it, taking the item and amount as input. if the item already exists, it updates the amount; otherwise, it creates a new entry.
 
 ### future features
-- [ ] a flag to undo and redo actions. especially useful for track, since it's easy to accidentally track the same thing more than once
-- [ ] delete functionality to income, divide, categorize (and track? but that can be done through undo. not sure yet)
+- [ ] a flag to undo and redo actions in `track` because it's easy to accidentally track the same thing more than once. might extrapolate this to other commands.
 - [ ] a summary command that takes in a month and year and shows the breakdown of where the money went
 
 ## technologies + database overview
