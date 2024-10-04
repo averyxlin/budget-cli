@@ -3,7 +3,7 @@ from commands.income import set_income
 from commands.list import list_data
 from commands.monthly_expenses import set_monthly_expenses
 from commands.categorize import categorize
-
+from commands.track_expense import track_expense
 # version
 VERSION = "1.0.0"
 
@@ -33,6 +33,12 @@ def main():
     categorize_subparser.add_argument('category', help='Category to categorize the expense under')
     categorize_subparser.add_argument('expense_type', choices=['needs', 'wants', 'savings'], help='Type of expense to categorize')
     categorize_subparser.add_argument('planned_amount', type=float, help='Planned amount for the expense')
+
+
+    # add itemize subparser
+    track_subparser = subparsers.add_parser('track', help='Itemize expenses')
+    track_subparser.add_argument('item', type=str, help='Item to track ')
+    track_subparser.add_argument('amount', type=float, help='Amount of the item')
 
     # parse arguments
     args = parser.parse_args()
@@ -66,6 +72,9 @@ def main():
 
     if args.command == 'categorize':
         categorize(args.category, args.expense_type, args.planned_amount)
+
+    if args.command == 'track':
+        track_expense(args.item, args.amount)
 
 if __name__ == '__main__':
     main()

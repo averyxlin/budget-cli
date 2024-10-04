@@ -13,6 +13,7 @@ commands/categorize.py
 commands/income.py
 commands/list.py
 commands/monthly_expenses.py
+commands/track_expense.py
 globals/__init__.py
 globals/total_income.py
 globals/total_monthly_expenses.py
